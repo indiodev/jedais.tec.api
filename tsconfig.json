@@ -1,5 +1,6 @@
 {
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
+  "transpileOnly": true,
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./build",
@@ -9,7 +10,7 @@
     "moduleResolution": "Node",
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
   "ts-node": {
     "experimentalSpecifierResolution": "node",
