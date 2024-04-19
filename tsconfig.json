@@ -4,4 +4,9 @@
     "rootDir": "./",
     "outDir": "./build",
   },
+  "ts-node": {
+    "experimentalSpecifierResolution": "node",
+    "transpileOnly": true,
+    "esm": true,
+  }
 }
