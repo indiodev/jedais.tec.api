@@ -8,6 +8,7 @@ tmp
 .env.local
 .env.production.local
 .env.development.local
+jedais.tec.api.pem
 
 # Frontend assets compiled code
 public/assets
