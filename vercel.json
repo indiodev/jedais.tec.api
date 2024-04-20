@@ -1,6 +1,6 @@
 {
   "version": 2,
   "name": "jedais-tec-api",
-  "builds": [{ "src": "build/bin/server.js", "use": "@now/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "build/bin/server.js" }]
+  "builds": [{ "src": "./build/bin/server.js", "use": "@now/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/build/bin/server.js" }]
 }
