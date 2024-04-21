@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Products
-        run: curl {server_url}store/products
+        run: curl https://jedais-tec-api.onrender.com
