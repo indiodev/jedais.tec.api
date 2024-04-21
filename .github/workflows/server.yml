@@ -1,0 +1,12 @@
+name: Faça uma requisição no Render a cada 30 minutos
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  render-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Products
+        run: curl {server_url}store/products
