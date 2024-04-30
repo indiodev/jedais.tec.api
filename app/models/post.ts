@@ -13,19 +13,24 @@ export default class Post extends BaseModel {
   @column()
   declare content: string
 
-  @column()
+  @column({ columnName: 'cover_image', serializeAs: 'cover_image' })
   declare cover_image: string
 
   @column()
   declare resume: string
 
-  @column.dateTime({ autoCreate: true })
+  @column.dateTime({ autoCreate: true, columnName: 'created_at', serializeAs: 'created_at' })
   declare created_at: DateTime
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @column.dateTime({
+    autoCreate: true,
+    autoUpdate: true,
+    columnName: 'updated_at',
+    serializeAs: 'updated_at',
+  })
   declare updated_at: DateTime
 
-  @column({ columnName: 'user_id' })
+  @column({ columnName: 'user_id', serializeAs: 'user_id' })
   declare user_id: number
 
   @belongsTo(() => User, {

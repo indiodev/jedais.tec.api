@@ -17,9 +17,14 @@ export default class Course extends BaseModel {
   @column()
   declare description: string
 
-  @column.dateTime({ autoCreate: true })
+  @column.dateTime({ autoCreate: true, columnName: 'created_at', serializeAs: 'created_at' })
   declare created_at: DateTime
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @column.dateTime({
+    autoCreate: true,
+    autoUpdate: true,
+    columnName: 'updated_at',
+    serializeAs: 'updated_at',
+  })
   declare updated_at: DateTime
 }

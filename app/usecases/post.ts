@@ -11,7 +11,8 @@ export default class PostUseCase {
   constructor(private post: LucidPostRepository) {}
 
   async Create(data: CreatePostDto): Promise<Post> {
-    return await this.post.create(data)
+    const createdPost = await this.post.create(data)
+    return createdPost as Post
   }
 
   async Update(data: UpdatePostDto): Promise<Post> {
