@@ -6,6 +6,12 @@ export default class Course extends BaseModel {
   declare id: number
 
   @column()
+  declare name: string
+
+  @column()
+  declare public: string
+
+  @column()
   declare level: string
 
   @column()

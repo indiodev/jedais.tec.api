@@ -15,11 +15,11 @@ export default class LucidPostRepository {
     const values = Object.values(query)
     const rawMap = keys.flatMap((key) => ` "posts"."${key}" = ? `)
     const raw = keys.length === 1 ? rawMap.join() : rawMap.join(` ${op ?? ''} `)
-    const user = await Model?.query().preload('author').whereRaw(raw, values).first()
+    const post = await Model?.query().preload('author').whereRaw(raw, values).first()
 
-    if (!user) return null
+    if (!post) return null
 
-    return user?.toJSON() as Entity
+    return post?.toJSON() as Entity
   }
 
   async create(data: CreatePostDto) {

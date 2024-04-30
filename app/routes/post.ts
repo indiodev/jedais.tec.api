@@ -8,6 +8,6 @@ export const PostRoute = router
     router.patch('/:id', [PostController, 'Update']).middleware(middleware.auth())
     router.get('/paginate', [PostController, 'Paginate'])
     router.get('/:id', [PostController, 'Show'])
-    router.delete('/:id', [PostController, 'Delete'])
+    router.delete('/:id', [PostController, 'Delete']).middleware(middleware.auth())
   })
   .prefix('post')
