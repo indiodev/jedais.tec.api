@@ -9,7 +9,8 @@ export const post = vine.object({
 
   title: vine.string(),
   content: vine.string().email(),
-  image: vine.string(),
+  cover_image: vine.string(),
+  resume: vine.string(),
 
   userId: vine.number().optional(),
   user_id: vine.number().optional(),

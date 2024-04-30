@@ -8,7 +8,8 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('title')
       table.text('content')
-      table.string('image')
+      table.string('cover_image')
+      table.string('resume')
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

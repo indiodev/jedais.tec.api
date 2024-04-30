@@ -14,7 +14,10 @@ export default class Post extends BaseModel {
   declare content: string
 
   @column()
-  declare image: string
+  declare cover_image: string
+
+  @column()
+  declare resume: string
 
   @column.dateTime({ autoCreate: true })
   declare created_at: DateTime
