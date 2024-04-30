@@ -46,4 +46,8 @@ export default class LucidPostRepository {
     const result = await Model.query().preload('author').paginate(query.page, query.limit)
     return result.toJSON() as Paginate<Entity>
   }
+
+  async delete(id: number) {
+    await Model.query().where('id', id).delete()
+  }
 }

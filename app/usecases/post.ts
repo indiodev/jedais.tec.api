@@ -32,4 +32,10 @@ export default class PostUseCase {
     if (!post) throw new ApplicationException('Post not found', { status: 404 })
     return post
   }
+
+  async Delete(id: number): Promise<void> {
+    const post = await this.post.findBy({ id })
+    if (!post) throw new ApplicationException('Post not found', { status: 404 })
+    await this.post.delete(id)
+  }
 }

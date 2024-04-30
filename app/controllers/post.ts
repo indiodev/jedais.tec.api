@@ -30,4 +30,10 @@ export default class PostController {
     const post = await this.usecase.Show(id!)
     return response.ok(post)
   }
+
+  async Delete({ request, response }: HttpContext) {
+    const { id } = await Validator.Post.Query.validate(request.params())
+    await this.usecase.Delete(id!)
+    return response.noContent()
+  }
 }
