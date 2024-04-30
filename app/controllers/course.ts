@@ -12,7 +12,7 @@ export default class CourseController {
     return response.ok(post)
   }
 
-  async Update({ request, response, auth, params }: HttpContext) {
+  async Update({ request, response, params }: HttpContext) {
     const { id } = await Validator.Course.Update.validate(params)
 
     const body = await request.validateUsing(Validator.Course.Update)
