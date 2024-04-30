@@ -19,8 +19,6 @@ export default class LucidPostRepository {
 
     if (!user) return null
 
-    console.log(JSON.stringify(user.toJSON(), null, 2))
-
     return user?.toJSON() as Entity
   }
 

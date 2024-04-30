@@ -12,7 +12,6 @@ export const post = vine.object({
   cover_image: vine.string(),
   resume: vine.string(),
 
-  userId: vine.number().optional(),
   user_id: vine.number().optional(),
 
   user: user.optional(),
