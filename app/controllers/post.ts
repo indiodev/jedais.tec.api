@@ -26,8 +26,12 @@ export default class PostController {
   }
 
   async Show({ request, response }: HttpContext) {
-    const { id } = await Validator.Post.Query.validate(request.params())
-    const post = await this.usecase.Show(id!)
+    // const { id } = await Validator.Post.Query.validate(request.params())
+    const { identifier } = request.params()
+    const isString = typeof identifier === 'string' && identifier.includes('-')
+    const validIdentifier = isString ? identifier : Number(identifier)
+
+    const post = await this.usecase.Show(validIdentifier!)
     return response.ok(post)
   }
 

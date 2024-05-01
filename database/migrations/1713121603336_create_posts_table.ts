@@ -9,7 +9,8 @@ export default class extends BaseSchema {
       table.string('title')
       table.text('content')
       table.string('cover_image')
-      table.string('resume')
+      table.text('resume')
+      table.string('slug')
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

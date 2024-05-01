@@ -13,6 +13,9 @@ export default class Post extends BaseModel {
   @column()
   declare content: string
 
+  @column()
+  declare slug: string
+
   @column({ columnName: 'cover_image', serializeAs: 'cover_image' })
   declare cover_image: string
 
