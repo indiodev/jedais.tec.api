@@ -6,9 +6,9 @@ export default class extends BaseSeeder {
     await Model.updateOrCreate(
       { email: 'admin@jedaistec.com.br' },
       {
-        name: 'Admin',
+        name: 'João Aguila',
         email: 'admin@jedaistec.com.br',
-        password: '123456',
+        password: 'admin@jedaistec',
         role: 'admin',
       }
     )
