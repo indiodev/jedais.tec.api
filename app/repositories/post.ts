@@ -23,6 +23,8 @@ export default class LucidPostRepository {
   }
 
   async create(data: CreatePostDto) {
+    console.log({ data })
+
     const transaction = await db.transaction(async (tsx) => {
       const post = await Model.create(data, { client: tsx })
 
