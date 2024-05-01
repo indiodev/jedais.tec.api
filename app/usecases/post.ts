@@ -5,6 +5,7 @@ import { Post } from '#entities/post'
 import ApplicationException from '#exceptions/application'
 import LucidPostRepository from '#repositories/post'
 import { inject } from '@adonisjs/core'
+import SHelper from '@adonisjs/core/helpers/string'
 
 @inject()
 export default class PostUseCase {
@@ -17,7 +18,7 @@ export default class PostUseCase {
 
     const createdPost = await this.post.create({
       ...data,
-      slug: data.title.toLowerCase().replace(/ /g, '-'),
+      slug: SHelper.slug(data.title.toLowerCase()),
     })
 
     return createdPost as Post
@@ -34,7 +35,7 @@ export default class PostUseCase {
 
     return await this.post.update({
       ...data,
-      slug: data?.title?.toLowerCase().replace(/ /g, '-'),
+      slug: SHelper.slug(data?.title?.toLowerCase() || ''),
     })
   }
 
